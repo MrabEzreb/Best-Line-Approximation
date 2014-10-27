@@ -17,7 +17,17 @@ public class SlopeIntercept {
 			p1.x = p1.x*-1;
 			slope = slope*-1;
 		}
-		
+		double intercept = 0;
+		while(true) {
+			if(p1.x==0) {
+				String slopeForm = "y = "+rise+"/"+run+"x + "+intercept;
+				System.out.println(slopeForm);
+			} else if(p1.x<0) {
+				if(Math.abs(p1.x)<Math.abs(run)) {
+					
+				}
+			}
+		}
 			
 	}
 
