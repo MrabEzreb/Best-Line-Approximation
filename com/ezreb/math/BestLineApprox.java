@@ -10,7 +10,6 @@ public class BestLineApprox {
 		// TODO Auto-generated method stub
 		FileInputStream values = new FileInputStream("input.txt");
 		Scanner reader = new Scanner(values);
-		reader.findInLine();
 		String[] ex = null;
 		int n = ex.length;
 		for(int i=1; i<n; i = i+1);
