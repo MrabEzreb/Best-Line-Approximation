@@ -1,17 +1,19 @@
 package com.ezreb.math;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class BestLineApprox {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Scanner reader = new Scanner(new FileInputStream("/Best-Line-Approximation/com/ezreb/math/Best-Line-Points"));
+		FileInputStream values = new FileInputStream("input.txt");
+		Scanner reader = new Scanner(values);
+		reader.findInLine()
 		String[] ex = null;
 		int n = ex.length;
-		int i;
-		for(i=1; i<n; i = i+1);
+		for(int i=1; i<n; i = i+1);
 			
 
 	}
