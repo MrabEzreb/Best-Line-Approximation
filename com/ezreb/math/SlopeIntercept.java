@@ -27,12 +27,9 @@ public class SlopeIntercept {
 		int tries = 1;
 		boolean isInt = false;
 		boolean risInt = false;
-		int rise2 = (int) Math.floor(rise);
-		int run2 = (int) Math.floor(run);
 		int slope2 = (int) Math.floor(slope);
 		int rise3 = (int) Math.floor(rise);
 		int run3 = (int) Math.floor(run);
-		double slope3 = slope;
 		if(rise == Math.floor(rise) && run == Math.floor(run) && slope == Math.floor(slope)) {
 			isInt = true;
 		} else if(rise == Math.floor(rise) && run == Math.floor(run)) {
