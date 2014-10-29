@@ -3,6 +3,6 @@
 //This is how many digits each x or y value will have.
 //For example, if you have an x value that is 1000, then you would put 4 here.
 //Note that you need to make every value this many digits.
-//So if you have (1000, 90) and (10, 0.9), you would put 4 here and change the values to (1000, 0090) and (0010, 0000.9).
+//So if you have (1000, 90) and (10, 9), you would put 4 here and change the values to (1000, 0090) and (0010, 0009).
 
 
