@@ -1,14 +1,22 @@
 package com.ezreb.math;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class SlopeIntercept {
 
-	public static void main(String[] args) {
-		double x1 = 2;
-		double y1 = 3;
+	public static void main(String[] args) throws IOException {
+		FileInputStream values = new FileInputStream("/BestLineApproximation/com/ezreb/math/slopeInt.txt");
+		Scanner reader = new Scanner(values).useDelimiter(",");
+		double x1 = reader.nextInt();
+		double y1 = reader.nextInt();
 		// TODO Auto-generated method stub
 		XYPoint p1 = new XYPoint(x1, y1);
-		double x2 = 3;
-		double y2 = 4;
+		double x2 = reader.nextInt();
+		double y2 = reader.nextInt();
+		reader.close();
 		XYPoint p2 = new XYPoint(x2, y2);
 		double rise = p2.y-p1.y;
 		double run = p2.x-p1.x;
