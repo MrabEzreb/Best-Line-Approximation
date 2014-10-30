@@ -2,6 +2,9 @@ package com.ezreb.math;
 
 public class SlopeIntercept {
 	public static String calculate(double x1, double y1, double x2, double y2) {
+		//FileInputStream values = new FileInputStream("/BestLineApproximation/com/ezreb/math/slopeInt.txt");
+		//Scanner reader = new Scanner(values).useDelimiter(",");
+		// TODO Auto-generated method stub
 		XYPoint p1 = new XYPoint(x1, y1);
 		XYPoint p2 = new XYPoint(x2, y2);
 		double rise = p2.y-p1.y;
