@@ -1,17 +1,7 @@
 package com.ezreb.math;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
-
 public class SlopeIntercept {
-
-	public static void main(String[] args) throws InterruptedException {
-		MathWindow windows = new MathWindow("Slope");
-		
-	}
-	public static void calculate(double x1, double y1, double x2, double y2) throws IOException {
+	public static String calculate(double x1, double y1, double x2, double y2) {
 		//FileInputStream values = new FileInputStream("/BestLineApproximation/com/ezreb/math/slopeInt.txt");
 		//Scanner reader = new Scanner(values).useDelimiter(",");
 		// TODO Auto-generated method stub
@@ -36,7 +26,8 @@ public class SlopeIntercept {
 		}
 		boolean intint = false;
 		int intercept2 = 0;
-		while(tries<10) {
+		String slopeForm = "Slope-Intercept Form Could Not Be Found";
+		while(tries<100) {
 			tries = tries+1;
 			if(intx==0) {
 				if(inty == Math.floor(inty)) {
@@ -45,7 +36,6 @@ public class SlopeIntercept {
 				} else {
 					intercept = (double) inty;
 				}
-				String slopeForm = "Slope-Intercept Form Could Not Be Found";
 				if(intint==true) {
 					if(isInt==true) {
 						slopeForm = "y = "+slope2+"x + "+intercept2;
@@ -63,7 +53,6 @@ public class SlopeIntercept {
 						slopeForm = "y = "+rise+"/"+run+"x + "+intercept;
 					}
 				}				
-				System.out.println(slopeForm);
 				break;
 			} else if(intx>0) {
 				intx = intx-1;
@@ -73,7 +62,7 @@ public class SlopeIntercept {
 				inty = inty+slope;
 			}
 		}
-			
+		return slopeForm;
 	}
 
 }
