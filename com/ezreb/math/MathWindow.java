@@ -53,6 +53,7 @@ public class MathWindow implements ActionListener {
 	public void stop() {
 		btn1.removeActionListener(this);
 	}
+	private String chosenMath = null;
 	public void actionPerformed(ActionEvent e) {
 		SlopeIntercept SlopeIntercept = new SlopeIntercept();
 		System.out.println("Button Pressed");
@@ -82,7 +83,7 @@ public class MathWindow implements ActionListener {
 	MenuItem top = new MenuItem("Always On Top");
 	Menu menuCalc = new Menu("Calculation");
 	MenuItem c1 = new MenuItem("Slope-Intercept Form");
-	String chosenMath = null;
+	MenuItem c2 = new MenuItem("Standard Form");
 	public void start() throws InterruptedException {
 		btn1.addActionListener(this);
 		windo2.addWindowListener(l);
@@ -103,10 +104,16 @@ public class MathWindow implements ActionListener {
 				chosenMath = "Slope Intercept Form";
 			}
 		});
+		c2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chosenMath = "Standard Form";
+			}
+		});
 		menuView.add(top);
 		menuBar.add(menuView);
 		windo2.setMenuBar(menuBar);
 		menuCalc.add(c1);
+		menuCalc.add(c2);
 		menuBar.add(menuCalc);
 	}
 }

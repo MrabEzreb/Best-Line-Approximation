@@ -1,7 +1,8 @@
 package com.ezreb.math;
 
 public class StandardForm implements MathFunction {
-
+	public StandardForm() {
+	}
 	@Override
 	public String calculate(double x1, double y1, double x2, double y2) {
 		XYPoint p1 = new XYPoint(x1, y1);
@@ -13,17 +14,12 @@ public class StandardForm implements MathFunction {
 		double intx = p1.x;
 		double inty = p1.y;
 		int tries = 0;
-		boolean isInt = false;
-		boolean risInt = false;
-		int slope2 = (int) Math.floor(slope);
-		int rise3 = (int) Math.floor(rise);
-		int run3 = (int) Math.floor(run);
+		Math.floor(slope);
+		Math.floor(rise);
+		Math.floor(run);
 		if(rise == Math.floor(rise) && run == Math.floor(run) && slope == Math.floor(slope)) {
-			isInt = true;
 		} else if(rise == Math.floor(rise) && run == Math.floor(run)) {
-			risInt = true;
 		}
-		boolean intint = false;
 		int intercept2 = 0;
 		String standardForm = "Standard Form Could Not Be Found";
 		while(tries<100) {
