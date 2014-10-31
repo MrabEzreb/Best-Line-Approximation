@@ -2,7 +2,6 @@ package com.ezreb.math;
 
 import java.awt.Button;
 import java.awt.Dimension;
-//import java.awt.Choice;
 import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.Label;
@@ -55,6 +54,7 @@ public class MathWindow implements ActionListener {
 		btn1.removeActionListener(this);
 	}
 	public void actionPerformed(ActionEvent e) {
+		SlopeIntercept SlopeIntercept = new SlopeIntercept();
 		System.out.println("Button Pressed");
 //		String chosenMath = chooser.getSelectedItem();
 		if(chosenMath=="Slope Intercept Form") {
@@ -67,7 +67,7 @@ public class MathWindow implements ActionListener {
 			double y = xandy.nextDouble();
 			double y2 = xandy.nextDouble();
 			xandy.close();
-			String slopeForm = SlopeIntercept.calculate(x, x2, y, y2);
+			String slopeForm = SlopeIntercept.calculate(x, y, x2, y2);
 			tf1.setText(slopeForm);
 		}
 	}
