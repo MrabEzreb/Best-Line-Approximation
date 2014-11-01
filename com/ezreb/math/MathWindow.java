@@ -59,31 +59,23 @@ public class MathWindow implements ActionListener {
 		StandardForm StandardForm = new StandardForm();
 		System.out.println("Button Pressed");
 //		String chosenMath = chooser.getSelectedItem();
+		String values = tf1.getText();
+		Scanner xandy = new Scanner(values);
+		xandy.useDelimiter(",");
+		double x = xandy.nextDouble();
+		double x2 = xandy.nextDouble();
+		double y = xandy.nextDouble();
+		double y2 = xandy.nextDouble();
+		xandy.close();
+		String answer = null;
 		if(chosenMath=="Slope Intercept Form") {
 			System.out.println("SlopeInterceptCHosen");
-			String values = tf1.getText();
-			Scanner xandy = new Scanner(values);
-			xandy.useDelimiter(",");
-			double x = xandy.nextDouble();
-			double x2 = xandy.nextDouble();
-			double y = xandy.nextDouble();
-			double y2 = xandy.nextDouble();
-			xandy.close();
-			String slopeForm = SlopeIntercept.calculate(x, y, x2, y2);
-			tf1.setText(slopeForm);
+			answer = SlopeIntercept.calculate(x, y, x2, y2);
 		} else if(chosenMath=="Standard Form") {
 			System.out.println("Standard Form Chosen");
-			String values = tf1.getText();
-			Scanner xandy = new Scanner(values);
-			xandy.useDelimiter(",");
-			double x = xandy.nextDouble();
-			double x2 = xandy.nextDouble();
-			double y = xandy.nextDouble();
-			double y2 = xandy.nextDouble();
-			xandy.close();
-			String standardForm = StandardForm.calculate(x, y, x2, y2);
-			tf1.setText(standardForm);
+			answer = StandardForm.calculate(x, y, x2, y2);
 		}
+		tf1.setText(answer);
 	}
 	WindowAdapter l = new WindowAdapter() {
 		@Override
