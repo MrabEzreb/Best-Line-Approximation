@@ -21,7 +21,7 @@ public class MathWindow implements ActionListener {
 		windo2.setSize(150, 150);
 		windo2.setVisible(true);
 	    btn1.setActionCommand("tf1.setText('I Did It!'");
-	    tf1.setText("This is a textbox");
+	    tf1.setText("");
 	    windo2.add(btn1);
 	    windo2.add(tf1);
 	    Dimension tf1s = new Dimension();
@@ -56,6 +56,7 @@ public class MathWindow implements ActionListener {
 	private String chosenMath = null;
 	public void actionPerformed(ActionEvent e) {
 		SlopeIntercept SlopeIntercept = new SlopeIntercept();
+		StandardForm StandardForm = new StandardForm();
 		System.out.println("Button Pressed");
 //		String chosenMath = chooser.getSelectedItem();
 		if(chosenMath=="Slope Intercept Form") {
@@ -70,6 +71,18 @@ public class MathWindow implements ActionListener {
 			xandy.close();
 			String slopeForm = SlopeIntercept.calculate(x, y, x2, y2);
 			tf1.setText(slopeForm);
+		} else if(chosenMath=="Standard Form") {
+			System.out.println("Standard Form Chosen");
+			String values = tf1.getText();
+			Scanner xandy = new Scanner(values);
+			xandy.useDelimiter(",");
+			double x = xandy.nextDouble();
+			double x2 = xandy.nextDouble();
+			double y = xandy.nextDouble();
+			double y2 = xandy.nextDouble();
+			xandy.close();
+			String standardForm = StandardForm.calculate(x, y, x2, y2);
+			tf1.setText(standardForm);
 		}
 	}
 	WindowAdapter l = new WindowAdapter() {
