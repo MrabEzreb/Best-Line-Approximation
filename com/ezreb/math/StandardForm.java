@@ -27,10 +27,12 @@ public class StandardForm implements MathFunction {
 			if(intx==0) {
 				if(inty == Math.floor(inty)) {
 					intercept2 = (int) inty;
-					standardForm = rise + "x + " + run + "y = " + intercept2;
+					int cee2 = (int) (intercept2*run);
+					standardForm = rise + "x + " + run + "y = " + cee2;
 				} else {
 					intercept = (double) inty;
-					standardForm = rise + "x + " + run + "y = " + intercept;
+					double cee = (double) intercept*run;
+					standardForm = rise + "x + " + run + "y = " + cee;
 				}
 			} else if(intx>0) {
 				intx = intx-1;

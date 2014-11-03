@@ -57,24 +57,42 @@ public class MathWindow implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SlopeIntercept SlopeIntercept = new SlopeIntercept();
 		StandardForm StandardForm = new StandardForm();
+		PrimeFactorization PrimeFactorization = new PrimeFactorization();
+		SquareRoot SquareRoot = new SquareRoot();
 		System.out.println("Button Pressed");
 //		String chosenMath = chooser.getSelectedItem();
 		String values = tf1.getText();
 		Scanner xandy = new Scanner(values);
 		xandy.useDelimiter(",");
-		double x = xandy.nextDouble();
-		double y = xandy.nextDouble();
-		double x2 = xandy.nextDouble();
-		double y2 = xandy.nextDouble();
-		xandy.close();
+		double x = 0;
+		double y = 0;
+		double x2 = 0;
+		double y2 = 0;
 		String answer = null;
 		if(chosenMath=="Slope Intercept Form") {
 			System.out.println("SlopeInterceptCHosen");
+			x = xandy.nextDouble();
+			y = xandy.nextDouble();
+			x2 = xandy.nextDouble();
+			y2 = xandy.nextDouble();
 			answer = SlopeIntercept.calculate(x, y, x2, y2);
 		} else if(chosenMath=="Standard Form") {
 			System.out.println("Standard Form Chosen");
+			x = xandy.nextDouble();
+			y = xandy.nextDouble();
+			x2 = xandy.nextDouble();
+			y2 = xandy.nextDouble();
 			answer = StandardForm.calculate(x, y, x2, y2);
+		} else if(chosenMath=="Prime Factorization") {
+			System.out.println("Prime Factorization Chosen");
+			x = xandy.nextDouble();
+			answer = PrimeFactorization.calculate(x, y, x2, y2);
+		} else if(chosenMath=="Square Root") {
+			System.out.println("Square Root Chosen");
+			x = xandy.nextDouble();
+			answer = SquareRoot.calculate(x, y, x2, y2);
 		}
+		xandy.close();
 		tf1.setText(answer);
 	}
 	WindowAdapter l = new WindowAdapter() {
@@ -89,6 +107,7 @@ public class MathWindow implements ActionListener {
 	Menu menuCalc = new Menu("Calculation");
 	MenuItem c1 = new MenuItem("Slope-Intercept Form");
 	MenuItem c2 = new MenuItem("Standard Form");
+	MenuItem c3 = new MenuItem("Prime Factorization");
 	public void start() throws InterruptedException {
 		btn1.addActionListener(this);
 		windo2.addWindowListener(l);
@@ -114,11 +133,17 @@ public class MathWindow implements ActionListener {
 				chosenMath = "Standard Form";
 			}
 		});
+		c3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chosenMath = "Prime Factorization";
+			}
+		});
 		menuView.add(top);
 		menuBar.add(menuView);
 		windo2.setMenuBar(menuBar);
 		menuCalc.add(c1);
 		menuCalc.add(c2);
+		menuCalc.add(c3);
 		menuBar.add(menuCalc);
 	}
 }
