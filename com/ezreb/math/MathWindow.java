@@ -63,8 +63,8 @@ public class MathWindow implements ActionListener {
 		Scanner xandy = new Scanner(values);
 		xandy.useDelimiter(",");
 		double x = xandy.nextDouble();
-		double x2 = xandy.nextDouble();
 		double y = xandy.nextDouble();
+		double x2 = xandy.nextDouble();
 		double y2 = xandy.nextDouble();
 		xandy.close();
 		String answer = null;
