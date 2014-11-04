@@ -20,23 +20,57 @@ public class SquareRoot implements MathFunction {
 		root.close();
 		int multiplyer = 1;
 		int curMulti = 1;
-		int curI = 0;
+		boolean curI = false;
 		int sqroot = 1;
-		for(int i = 0; i < root2.length; i++) {
-			if(i==curI) {
-				curMulti = root2[i];
+		boolean isDone = false;
+		int eye = 1;
+		boolean skip = true;
+		while(isDone==false) {
+			if(skip==true) {
+				curMulti = root2[eye];
+				skip = false;
 				continue;
-			} else if(root2[i]==curMulti) {
-				multiplyer = multiplyer*root2[i];
-				System.out.println(multiplyer);
-				curI = i+1;
-				curMulti = 1;
+			} else if(root2[eye-1]==0) {
+				isDone = true;
+				break;
 			} else {
-				sqroot = sqroot*curMulti;
-				curMulti = 1;
-			}
+				if(root2[eye-1]==root2[eye]) {
+					multiplyer = multiplyer*curMulti;
+					skip = true;
+					System.out.println(multiplyer+"multi");
+					System.out.println(eye+"eye");
+				} else {
+					sqroot = sqroot*curMulti;
+					curMulti = root2[eye];
+					System.out.println(sqroot+"root");
+				}
+				curMulti = root2[eye];
+			}	
+			eye = eye + 1;
 		}
+		
 		String retVal = multiplyer+"*/"+sqroot;
 		return retVal;
+	}
+	public void oldFunc() {
+		int[] root2 = new int[50];
+		for(int i = 0; i < root2.length; i++) {
+			boolean curI = false;
+			int curMulti = 0;
+			if(curI==true) {
+				curI = false;
+				continue;
+			} else if(root2[i]==curMulti) {
+				int multiplyer = 0;
+				multiplyer = multiplyer*root2[i];
+				System.out.println(multiplyer);
+				curI = true;
+				curMulti = root2[i];
+			} else {
+				int sqroot = 0;
+				sqroot = sqroot*curMulti;
+				curMulti = root2[i];
+			}
+		}
 	}
 }
