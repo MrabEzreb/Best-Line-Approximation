@@ -108,6 +108,7 @@ public class MathWindow implements ActionListener {
 	MenuItem c1 = new MenuItem("Slope-Intercept Form");
 	MenuItem c2 = new MenuItem("Standard Form");
 	MenuItem c3 = new MenuItem("Prime Factorization");
+	MenuItem c4 = new MenuItem("Square Root");
 	public void start() throws InterruptedException {
 		btn1.addActionListener(this);
 		windo2.addWindowListener(l);
@@ -138,12 +139,18 @@ public class MathWindow implements ActionListener {
 				chosenMath = "Prime Factorization";
 			}
 		});
+		c4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chosenMath = "Square Root";
+			}
+		});
 		menuView.add(top);
 		menuBar.add(menuView);
 		windo2.setMenuBar(menuBar);
 		menuCalc.add(c1);
 		menuCalc.add(c2);
 		menuCalc.add(c3);
+		menuCalc.add(c4);
 		menuBar.add(menuCalc);
 	}
 }

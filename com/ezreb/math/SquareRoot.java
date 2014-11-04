@@ -15,16 +15,28 @@ public class SquareRoot implements MathFunction {
 		int currentFactor = 0;
 		while(root.hasNextInt()==true) {
 			root2[currentFactor] = root.nextInt();
-			currentFactor = currentFactor+1;
+			currentFactor++;
 		}
-		for(int prime : PrimeFactorization.primes) {
-			for(int factor : root2) {
-				if(factor~=prime) {
-					
-				}
+		root.close();
+		int multiplyer = 1;
+		int curMulti = 1;
+		int curI = 0;
+		int sqroot = 1;
+		for(int i = 0; i < root2.length; i++) {
+			if(i==curI) {
+				curMulti = root2[i];
+				continue;
+			} else if(root2[i]==curMulti) {
+				multiplyer = multiplyer*root2[i];
+				System.out.println(multiplyer);
+				curI = i+1;
+				curMulti = 1;
+			} else {
+				sqroot = sqroot*curMulti;
+				curMulti = 1;
 			}
 		}
-		return null;
+		String retVal = multiplyer+"*/"+sqroot;
+		return retVal;
 	}
-
 }
