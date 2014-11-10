@@ -53,7 +53,7 @@ public class MathWindow implements ActionListener {
 	public void stop() {
 		btn1.removeActionListener(this);
 	}
-	private String chosenMath = null;
+	public String chosenMath = null;
 	public void actionPerformed(ActionEvent e) {
 		SlopeIntercept SlopeIntercept = new SlopeIntercept();
 		StandardForm StandardForm = new StandardForm();
@@ -91,6 +91,9 @@ public class MathWindow implements ActionListener {
 			System.out.println("Square Root Chosen");
 			x = xandy.nextDouble();
 			answer = SquareRoot.calculate(x, y, x2, y2);
+		} else {
+			System.out.println("Plugin Function Chosen.");
+			
 		}
 		xandy.close();
 		tf1.setText(answer);
@@ -104,7 +107,7 @@ public class MathWindow implements ActionListener {
 	MenuBar menuBar = new MenuBar();
 	Menu menuView = new Menu("View");
 	MenuItem top = new MenuItem("Always On Top");
-	Menu menuCalc = new Menu("Calculation");
+	public Menu menuCalc = new Menu("Calculation");
 	MenuItem c1 = new MenuItem("Slope-Intercept Form");
 	MenuItem c2 = new MenuItem("Standard Form");
 	MenuItem c3 = new MenuItem("Prime Factorization");
