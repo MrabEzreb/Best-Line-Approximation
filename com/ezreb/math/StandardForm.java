@@ -1,6 +1,6 @@
 package com.ezreb.math;
 
-public class StandardForm implements MathFunction {
+public class StandardForm extends MathFunction {
 	public StandardForm() {
 	}
 	@Override

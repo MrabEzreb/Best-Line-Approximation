@@ -1,8 +1,9 @@
 package com.ezreb.math;
 
-public class SlopeIntercept implements MathFunction {
+public class SlopeIntercept extends MathFunction {
 	public SlopeIntercept() {
 	}
+	@Override
 	public String calculate(double x1, double y1, double x2, double y2) {
 		//FileInputStream values = new FileInputStream("/BestLineApproximation/com/ezreb/math/slopeInt.txt");
 		//Scanner reader = new Scanner(values).useDelimiter(",");

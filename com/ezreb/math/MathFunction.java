@@ -1,8 +1,10 @@
 package com.ezreb.math;
 
-public interface MathFunction {
+public class MathFunction {
 
-	public String calculate(double x1, double y1, double x2, double y2);
+	public String calculate(double x1, double y1, double x2, double y2) {
+		return null;
+	}
 	public String chosenMath = null;
 	
 }

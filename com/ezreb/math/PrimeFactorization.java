@@ -1,6 +1,6 @@
 package com.ezreb.math;
 
-public class PrimeFactorization implements MathFunction {
+public class PrimeFactorization extends MathFunction {
 	public PrimeFactorization() {
 	}
 	@Override

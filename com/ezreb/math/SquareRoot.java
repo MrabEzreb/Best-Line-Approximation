@@ -2,7 +2,7 @@ package com.ezreb.math;
 
 import java.util.Scanner;
 
-public class SquareRoot implements MathFunction {
+public class SquareRoot extends MathFunction {
 	public SquareRoot() {
 	}
 	@Override

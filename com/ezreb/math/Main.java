@@ -1,11 +1,11 @@
 package com.ezreb.math;
 
+import java.io.IOException;
+
 class Main {
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, IOException {
+		final PluginLoader loader = new PluginLoader();
 		windows.start();
-		if(args[0]=="onTop") {
-			windows.windo2.setAlwaysOnTop(true);
-		}
 	}
 	final static MathWindow windows = new MathWindow();
 }
